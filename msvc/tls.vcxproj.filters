@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B2395BC7-EC6C-34CD-9009-D4C7A2719708}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(SrcDir)\tls\tls.c"><Filter>Source Files</Filter></ClCompile>
+    <ClCompile Include="$(SrcDir)\tls\tls_bio_cb.c"><Filter>Source Files</Filter></ClCompile>
+    <ClCompile Include="$(SrcDir)\tls\tls_client.c"><Filter>Source Files</Filter></ClCompile>
+    <ClCompile Include="$(SrcDir)\tls\tls_config.c"><Filter>Source Files</Filter></ClCompile>
+    <ClCompile Include="$(SrcDir)\tls\tls_conninfo.c"><Filter>Source Files</Filter></ClCompile>
+    <ClCompile Include="$(SrcDir)\tls\tls_keypair.c"><Filter>Source Files</Filter></ClCompile>
+    <ClCompile Include="$(SrcDir)\tls\tls_ocsp.c"><Filter>Source Files</Filter></ClCompile>
+    <ClCompile Include="$(SrcDir)\tls\tls_peer.c"><Filter>Source Files</Filter></ClCompile>
+    <ClCompile Include="$(SrcDir)\tls\tls_server.c"><Filter>Source Files</Filter></ClCompile>
+    <ClCompile Include="$(SrcDir)\tls\tls_util.c"><Filter>Source Files</Filter></ClCompile>
+    <ClCompile Include="$(SrcDir)\tls\tls_verify.c"><Filter>Source Files</Filter></ClCompile>
+  </ItemGroup>
+</Project>

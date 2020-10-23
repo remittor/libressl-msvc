@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{76804640-1891-3DFD-9D5B-D859238F3E7C}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>libssl</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <Import Project="..\LibreSSL.vsprops" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(VC_STATIC_RTL)'=='Debug|1'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(VC_STATIC_RTL)'=='Release|1'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(SrcDir)\ssl\bio_ssl.c" />
+    <ClCompile Include="$(SrcDir)\ssl\bs_ber.c" />
+    <ClCompile Include="$(SrcDir)\ssl\bs_cbb.c" />
+    <ClCompile Include="$(SrcDir)\ssl\bs_cbs.c" />
+    <ClCompile Include="$(SrcDir)\ssl\d1_both.c" />
+    <ClCompile Include="$(SrcDir)\ssl\d1_clnt.c" />
+    <ClCompile Include="$(SrcDir)\ssl\d1_lib.c" />
+    <ClCompile Include="$(SrcDir)\ssl\d1_pkt.c" />
+    <ClCompile Include="$(SrcDir)\ssl\d1_srtp.c" />
+    <ClCompile Include="$(SrcDir)\ssl\d1_srvr.c" />
+    <ClCompile Include="$(SrcDir)\ssl\pqueue.c" />
+    <ClCompile Include="$(SrcDir)\ssl\s3_cbc.c" />
+    <ClCompile Include="$(SrcDir)\ssl\s3_lib.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_algs.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_asn1.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_both.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_cert.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_ciph.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_ciphers.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_clnt.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_err.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_init.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_kex.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_lib.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_methods.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_packet.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_pkt.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_rsa.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_sess.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_sigalgs.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_srvr.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_stat.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_tlsext.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_transcript.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_txt.c" />
+    <ClCompile Include="$(SrcDir)\ssl\ssl_versions.c" />
+    <ClCompile Include="$(SrcDir)\ssl\t1_enc.c" />
+    <ClCompile Include="$(SrcDir)\ssl\t1_lib.c" />
+    <ClCompile Include="$(SrcDir)\ssl\tls12_record_layer.c" />
+    <ClCompile Include="$(SrcDir)\ssl\tls13_buffer.c" />
+    <ClCompile Include="$(SrcDir)\ssl\tls13_client.c" />
+    <ClCompile Include="$(SrcDir)\ssl\tls13_error.c" />
+    <ClCompile Include="$(SrcDir)\ssl\tls13_handshake.c" />
+    <ClCompile Include="$(SrcDir)\ssl\tls13_handshake_msg.c" />
+    <ClCompile Include="$(SrcDir)\ssl\tls13_key_schedule.c" />
+    <ClCompile Include="$(SrcDir)\ssl\tls13_key_share.c" />
+    <ClCompile Include="$(SrcDir)\ssl\tls13_legacy.c" />
+    <ClCompile Include="$(SrcDir)\ssl\tls13_lib.c" />
+    <ClCompile Include="$(SrcDir)\ssl\tls13_record.c" />
+    <ClCompile Include="$(SrcDir)\ssl\tls13_record_layer.c" />
+    <ClCompile Include="$(SrcDir)\ssl\tls13_server.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

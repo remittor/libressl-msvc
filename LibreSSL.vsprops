@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PropertySheetDisplayName>LibreSSL</_PropertySheetDisplayName>
+    <TargetName>$(ProjectName)</TargetName>
+    <IntDir>$(SolutionDir)\.intermediates\$(ProjectName)\$(Platform)_$(Configuration)\</IntDir>
+    <LibDir>$(SolutionDir)\lib\$(Platform)_$(Configuration)\</LibDir>
+    <BinDir>$(SolutionDir)\bin\$(Platform)_$(Configuration)\</BinDir>
+    <SrcDir>$(SolutionDir)\src\</SrcDir>
+    <IntDir Condition="'$(GLB_OUT_INT_DIR)'!=''">$(GLB_OUT_INT_DIR)\LibreSSL_$(ProjectName)\$(Platform)_$(Configuration)\</IntDir>
+    <LibDir Condition="'$(GLB_OUT_LIB_DIR)'!=''">$(GLB_OUT_LIB_DIR)\$(Platform)_$(Configuration)\</LibDir>
+    <BinDir Condition="'$(GLB_OUT_BIN_DIR)'!=''">$(GLB_OUT_BIN_DIR)\$(Platform)_$(Configuration)\</BinDir>
+    <SrcDir Condition="'$(OPENSSL_SRC)'!=''">$(OPENSSL_SRC)</SrcDir>
+    <SrcDir Condition="'$(LIBRESSL_SRC)'!=''">$(LIBRESSL_SRC)</SrcDir>
+    <OutDir>$(LibDir)</OutDir>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <WarningLevel>Level3</WarningLevel>
+      <ExceptionHandling>false</ExceptionHandling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <CompileAs>CompileAsC</CompileAs>
+      <AdditionalIncludeDirectories>
+        $(SrcDir)\include;
+        $(SrcDir)\include\compat;
+        $(SrcDir)\crypto;
+        $(SrcDir)\crypto\asn1;
+        $(SrcDir)\crypto\dsa;
+        $(SrcDir)\crypto\evp;
+        $(SrcDir)\crypto\modes;
+        $(SrcDir)\crypto\bn;
+        $(SrcDir)\crypto\ecdh;
+        $(SrcDir)\crypto\ec;
+        $(SrcDir)\crypto\ecdsa;
+      </AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4057;4100;4127;4242;4244;4267;4706;4820;4996</DisableSpecificWarnings>
+      <PreprocessorDefinitions>
+        LIBRESSL_INTERNAL;
+        OPENSSL_NO_HW_PADLOCK;
+        OPENSSL_NO_ASM;
+        inline=__inline;
+        restrict;
+        _CRT_SECURE_NO_WARNINGS;
+        _CRT_DEPRECATED_NO_WARNINGS;
+        _REENTRANT;
+        _POSIX_THREAD_SAFE_FUNCTIONS;
+        WIN32_LEAN_AND_MEAN;
+        NO_SYSLOG;
+        HAVE_STRNLEN;
+        _WIN32_WINNT=0x0600;
+        __BEGIN_HIDDEN_DECLS=;
+        __END_HIDDEN_DECLS=;
+        OPENSSLDIR="c:/Windows/OpenSSL";
+      </PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+</Project>
