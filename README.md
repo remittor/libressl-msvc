@@ -1,4 +1,4 @@
-# LibreSSL for Windows (MSVC)
+# LibreSSL v3.2.2 for Windows (MSVC)
 
 Up-to-date LibreSSL sources: https://github.com/EtchDroid/LibreSSL
 
