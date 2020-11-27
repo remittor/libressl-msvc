@@ -67,7 +67,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
     <ClCompile>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(VC_STATIC_RTL)'!='1'">MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(VC_STATIC_RTL)'=='1'">MultiThreadedDebug</RuntimeLibrary>
       <Optimization>Disabled</Optimization>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -75,25 +76,27 @@
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(VC_STATIC_RTL)'=='Debug|1'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(GLB_FAKE_DEBUG)'=='Debug|1'">
     <ClCompile>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(VC_STATIC_RTL)'!='1'">MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(VC_STATIC_RTL)'=='1'">MultiThreaded</RuntimeLibrary>
+      <Optimization>$(GLB_FAKE_DEBUG_OPT)</Optimization>
+      <InlineFunctionExpansion>$(GLB_FAKE_DEBUG_INL)</InlineFunctionExpansion>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
     <ClCompile>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(VC_STATIC_RTL)'!='1'">MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(VC_STATIC_RTL)'=='1'">MultiThreaded</RuntimeLibrary>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(VC_STATIC_RTL)'=='Release|1'">
-    <ClCompile>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-    </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="$(SrcDir)\apps\openssl\apps.c" />

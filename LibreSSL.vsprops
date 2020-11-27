@@ -22,6 +22,7 @@
       <WarningLevel>Level3</WarningLevel>
       <ExceptionHandling>false</ExceptionHandling>
       <BufferSecurityCheck>false</BufferSecurityCheck>
+      <StringPooling>true</StringPooling>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <CompileAs>CompileAsC</CompileAs>
       <AdditionalIncludeDirectories>
@@ -55,6 +56,7 @@
         __BEGIN_HIDDEN_DECLS=;
         __END_HIDDEN_DECLS=;
         OPENSSLDIR="c:/Windows/OpenSSL";
+        GLB_FAKE_DEBUG=$(GLB_FAKE_DEBUG);
       </PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
